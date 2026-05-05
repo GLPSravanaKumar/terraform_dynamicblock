@@ -34,11 +34,19 @@ subnet = {
 region        = "asia-south1"
 firewall_name = "glps-prod-firewall"
 firewall_rules = {
-  allow_http = {
+  http = {
     protocol = "tcp",
-    ports    = ["80", "8080"]
+    ports    = ["80"]
   }
-  allow_ssh = {
+  https = {
+    protocol = "tcp",
+    ports    = ["443"]
+  }
+  tcp = {
+    protocol = "tcp",
+    ports    = ["8080"]
+  }
+  ssh = {
     protocol = "tcp",
     ports    = ["22"]
   }
